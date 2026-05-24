@@ -200,16 +200,12 @@
       transform-origin: left; transition: transform 0.3s;
     }
     .project-card:hover::before { transform: scaleX(1); }
-    .project-card:hover {
-      box-shadow: var(--shadow-hover);
-      transform: translateY(-3px);
-    }
+    .project-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3px); }
     .project-header {
       display: flex; align-items: flex-start;
       justify-content: space-between; margin-bottom: 0.75rem;
     }
     .project-icon { font-size: 1.5rem; }
-    .project-links { display: flex; gap: 0.5rem; }
     .project-link {
       color: var(--ink-muted); text-decoration: none;
       font-size: 0.8rem; font-weight: 500;
@@ -217,14 +213,8 @@
       transition: color 0.2s;
     }
     .project-link:hover { color: var(--accent); }
-    .project-card h3 {
-      font-size: 1.05rem; font-weight: 600;
-      margin-bottom: 0.5rem; color: var(--ink);
-    }
-    .project-card p {
-      font-size: 0.88rem; color: var(--ink-muted);
-      line-height: 1.6; margin-bottom: 1rem;
-    }
+    .project-card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--ink); }
+    .project-card p { font-size: 0.88rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 1rem; }
 
     /* EXPERIENCE */
     #experience { background: white; }
@@ -234,10 +224,7 @@
       left: 0; top: 8px; bottom: 0;
       width: 1px; background: var(--border);
     }
-    .timeline-item {
-      position: relative; padding-bottom: 2.5rem;
-      padding-left: 1.5rem;
-    }
+    .timeline-item { position: relative; padding-bottom: 2.5rem; padding-left: 1.5rem; }
     .timeline-item::before {
       content: ''; position: absolute;
       left: -1.5rem; top: 8px;
@@ -251,17 +238,12 @@
       color: var(--accent); margin-bottom: 0.35rem;
       letter-spacing: 0.04em;
     }
-    .timeline-item h3 {
-      font-size: 1.05rem; font-weight: 600;
-      color: var(--ink); margin-bottom: 0.2rem;
-    }
-    .timeline-company {
-      font-size: 0.9rem; color: var(--ink-muted);
-      margin-bottom: 0.75rem;
-    }
-    .timeline-item p {
+    .timeline-item h3 { font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 0.2rem; }
+    .timeline-company { font-size: 0.9rem; color: var(--ink-muted); margin-bottom: 0.75rem; }
+    .timeline-item ul { padding-left: 1.1rem; }
+    .timeline-item ul li {
       font-size: 0.9rem; color: var(--ink-light);
-      line-height: 1.7;
+      line-height: 1.7; margin-bottom: 0.3rem;
     }
 
     /* CONTACT */
@@ -269,11 +251,7 @@
     #contact .section-label { color: var(--accent-mid); }
     #contact .section-title { color: white; }
     #contact .section-desc { color: rgba(255,255,255,0.6); }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem; align-items: start;
-    }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
     .contact-links { display: flex; flex-direction: column; gap: 1rem; }
     .contact-link {
       display: flex; align-items: center; gap: 1rem;
@@ -291,32 +269,23 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 1rem; flex-shrink: 0;
     }
-    .contact-right h3 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.6rem; margin-bottom: 1rem; color: white;
-    }
-    .contact-right p {
-      color: rgba(255,255,255,0.6);
-      font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem;
-    }
+    .contact-right h3 { font-family: 'DM Serif Display', serif; font-size: 1.6rem; margin-bottom: 1rem; color: white; }
+    .contact-right p { color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem; }
     .btn-white {
       background: white; color: var(--ink);
       padding: 0.75rem 1.75rem; border-radius: 10px;
       font-weight: 600; font-size: 0.95rem;
       text-decoration: none; display: inline-flex;
-      align-items: center; gap: 0.5rem;
-      transition: all 0.2s;
+      align-items: center; gap: 0.5rem; transition: all 0.2s;
     }
     .btn-white:hover { opacity: 0.9; transform: translateY(-1px); }
 
-    /* FOOTER */
     footer {
       background: var(--ink); border-top: 1px solid rgba(255,255,255,0.08);
       padding: 1.5rem 2rem; text-align: center;
       color: rgba(255,255,255,0.35); font-size: 0.82rem;
     }
 
-    /* ANIMATIONS */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -337,7 +306,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a href="#" class="nav-logo">Muhammad Ahmed</a>
@@ -350,17 +318,15 @@
   </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-content">
     <div class="hero-badge">
       <span></span> Available for Freelance & Mentoring
     </div>
-    <h1>Senior Backend<br><em>Engineer</em> based<br>in Germany</h1>
+    <h1>Senior Backend<br><em>Engineer</em> based<br>in Berlin, Germany</h1>
     <p class="hero-sub">
-      I build scalable, secure backend systems with PHP, Laravel, and Symfony.
-      10+ years of experience delivering production-grade web applications
-      and APIs for clients across Europe.
+      13+ years building scalable, high-availability web applications with PHP, Laravel, Symfony, and Python.
+      Fully authorised to work in Germany — Chancenkarte holder, no sponsoring required.
     </p>
     <div class="hero-actions">
       <a href="#projects" class="btn btn-primary">View My Work ↓</a>
@@ -368,7 +334,7 @@
     </div>
     <div class="hero-stats">
       <div>
-        <div class="stat-num">10+</div>
+        <div class="stat-num">13+</div>
         <div class="stat-label">Years Experience</div>
       </div>
       <div>
@@ -388,39 +354,33 @@
   <div class="section-inner">
     <div class="section-label">Expertise</div>
     <h2 class="section-title">What I Work With</h2>
-    <p class="section-desc">A decade of hands-on experience across the full backend stack — from API design to cloud infrastructure.</p>
+    <p class="section-desc">13+ years of hands-on experience across the full backend stack — from API design to cloud infrastructure.</p>
     <div class="skills-grid">
       <div class="skill-card fade-in">
         <div class="skill-icon">⚙️</div>
         <h3>PHP & Frameworks</h3>
-        <p>Deep expertise in modern PHP development with Laravel and Symfony for production systems.</p>
+        <p>Deep expertise in modern PHP development with Laravel and Symfony for large-scale production systems.</p>
         <div class="skill-tags">
-          <span class="tag">PHP 8.3</span>
-          <span class="tag">Laravel 13</span>
-          <span class="tag">Symfony 7</span>
-          <span class="tag">REST APIs</span>
+          <span class="tag">PHP 8.3</span><span class="tag">Laravel 13</span>
+          <span class="tag">Symfony 7</span><span class="tag">CodeIgniter</span><span class="tag">Lumen</span>
         </div>
       </div>
       <div class="skill-card fade-in">
         <div class="skill-icon">🗄️</div>
         <h3>Databases & Caching</h3>
-        <p>Designing optimised schemas, writing efficient queries, and implementing caching layers.</p>
+        <p>Designing optimised schemas, writing efficient queries, and implementing caching layers at scale.</p>
         <div class="skill-tags">
-          <span class="tag">MySQL</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">Redis</span>
-          <span class="tag">Eloquent ORM</span>
+          <span class="tag">MySQL</span><span class="tag">PostgreSQL</span>
+          <span class="tag">MongoDB</span><span class="tag">Redis</span><span class="tag">Firebase</span>
         </div>
       </div>
       <div class="skill-card fade-in">
         <div class="skill-icon">☁️</div>
         <h3>Cloud & DevOps</h3>
-        <p>Containerised deployments, CI/CD pipelines, and cloud-native architecture on GCP.</p>
+        <p>Containerised deployments, CI/CD pipelines, and cloud-native architecture on AWS and GCP.</p>
         <div class="skill-tags">
-          <span class="tag">Docker</span>
-          <span class="tag">GCP</span>
-          <span class="tag">GitHub Actions</span>
-          <span class="tag">Cloud Run</span>
+          <span class="tag">AWS EC2/RDS/S3</span><span class="tag">Docker</span>
+          <span class="tag">Jenkins</span><span class="tag">GitHub Actions</span><span class="tag">GCP</span>
         </div>
       </div>
       <div class="skill-card fade-in">
@@ -428,9 +388,8 @@
         <h3>Messaging & Queues</h3>
         <p>Building async, event-driven systems with message queues for decoupled microservices.</p>
         <div class="skill-tags">
-          <span class="tag">RabbitMQ</span>
-          <span class="tag">Pub/Sub</span>
-          <span class="tag">Laravel Queues</span>
+          <span class="tag">RabbitMQ</span><span class="tag">Laravel Horizon</span>
+          <span class="tag">Laravel Queues</span><span class="tag">Pub/Sub</span>
         </div>
       </div>
       <div class="skill-card fade-in">
@@ -438,20 +397,17 @@
         <h3>Testing & Quality</h3>
         <p>Test-driven development with comprehensive unit, integration, and functional test suites.</p>
         <div class="skill-tags">
-          <span class="tag">PHPUnit</span>
-          <span class="tag">Pest</span>
-          <span class="tag">TDD</span>
-          <span class="tag">SOLID</span>
+          <span class="tag">PHPUnit</span><span class="tag">Pest</span>
+          <span class="tag">TDD</span><span class="tag">SOLID</span><span class="tag">DDD</span>
         </div>
       </div>
       <div class="skill-card fade-in">
-        <div class="skill-icon">🏗️</div>
-        <h3>Architecture</h3>
-        <p>Designing maintainable systems following clean architecture and domain-driven design principles.</p>
+        <div class="skill-icon">🛒</div>
+        <h3>CMS & E-Commerce</h3>
+        <p>Extensive experience with e-commerce platforms and CMS solutions for high-traffic sites.</p>
         <div class="skill-tags">
-          <span class="tag">DDD</span>
-          <span class="tag">Microservices</span>
-          <span class="tag">Clean Code</span>
+          <span class="tag">Magento 2</span><span class="tag">Shopify</span>
+          <span class="tag">WordPress</span><span class="tag">TYPO3</span><span class="tag">OpenCart</span>
         </div>
       </div>
     </div>
@@ -463,17 +419,51 @@
   <div class="section-inner">
     <div class="section-label">Portfolio</div>
     <h2 class="section-title">Featured Projects</h2>
-    <p class="section-desc">A selection of production-grade open source projects demonstrating my approach to backend engineering.</p>
+    <p class="section-desc">Production-grade open source projects demonstrating my approach to backend engineering.</p>
     <div class="projects-grid">
       <div class="project-card fade-in">
         <div class="project-header">
+          <div class="project-icon">🛒</div>
+          <a href="https://github.com/ahmedzarrar42/ecommerce-api" class="project-link" target="_blank">↗ GitHub</a>
+        </div>
+        <h3>E-Commerce REST API</h3>
+        <p>Laravel 13 REST API with product catalogue, cart management, order processing, stock management, and Sanctum auth. 23 endpoints with PHPUnit tests.</p>
+        <div class="skill-tags">
+          <span class="tag">Laravel 13</span><span class="tag">MySQL</span>
+          <span class="tag">Redis</span><span class="tag">Sanctum</span><span class="tag">Docker</span>
+        </div>
+      </div>
+      <div class="project-card fade-in">
+        <div class="project-header">
+          <div class="project-icon">🔐</div>
+          <a href="https://github.com/ahmedzarrar42/auth-microservice" class="project-link" target="_blank">↗ GitHub</a>
+        </div>
+        <h3>Auth Microservice</h3>
+        <p>Standalone authentication service with JWT, Two-Factor Authentication (TOTP), RBAC, Redis-cached permissions, rate limiting, and full audit logging.</p>
+        <div class="skill-tags">
+          <span class="tag">Laravel</span><span class="tag">JWT</span>
+          <span class="tag">2FA/TOTP</span><span class="tag">RBAC</span><span class="tag">Redis</span>
+        </div>
+      </div>
+      <div class="project-card fade-in">
+        <div class="project-header">
+          <div class="project-icon">📦</div>
+          <a href="https://github.com/ahmedzarrar42/laravel-microservices-starter" class="project-link" target="_blank">↗ GitHub</a>
+        </div>
+        <h3>Laravel Microservices Starter</h3>
+        <p>Production-ready boilerplate with API Gateway, User Service, Order Service, and Notification Service. REST + RabbitMQ inter-service communication.</p>
+        <div class="skill-tags">
+          <span class="tag">Laravel</span><span class="tag">RabbitMQ</span>
+          <span class="tag">Docker Compose</span><span class="tag">API Gateway</span>
+        </div>
+      </div>
+      <div class="project-card fade-in">
+        <div class="project-header">
           <div class="project-icon">⚙️</div>
-          <div class="project-links">
-            <a href="https://github.com/ahmedzarrar42/symfony-platform-api" class="project-link" target="_blank">↗ GitHub</a>
-          </div>
+          <a href="https://github.com/ahmedzarrar42/symfony-platform-api" class="project-link" target="_blank">↗ GitHub</a>
         </div>
         <h3>Symfony Platform API</h3>
-        <p>Production-grade REST API with JWT auth, order state machine, async processing via RabbitMQ, and Redis caching.</p>
+        <p>Production-grade REST API with JWT auth, order state machine, async processing via RabbitMQ, Redis caching, and full Docker setup.</p>
         <div class="skill-tags">
           <span class="tag">Symfony 7</span><span class="tag">PHP 8.3</span>
           <span class="tag">RabbitMQ</span><span class="tag">Docker</span>
@@ -481,55 +471,11 @@
       </div>
       <div class="project-card fade-in">
         <div class="project-header">
-          <div class="project-icon">🛒</div>
-          <div class="project-links">
-            <a href="https://github.com/ahmedzarrar42/ecommerce-api" class="project-link" target="_blank">↗ GitHub</a>
-          </div>
-        </div>
-        <h3>E-Commerce REST API</h3>
-        <p>Full RESTful API for an e-commerce platform with product catalogue, cart management, and role-based access control.</p>
-        <div class="skill-tags">
-          <span class="tag">Laravel 13</span><span class="tag">MySQL</span>
-          <span class="tag">Redis</span><span class="tag">Sanctum</span>
-        </div>
-      </div>
-      <div class="project-card fade-in">
-        <div class="project-header">
-          <div class="project-icon">🔐</div>
-          <div class="project-links">
-            <a href="https://github.com/ahmedzarrar42/auth-microservice" class="project-link" target="_blank">↗ GitHub</a>
-          </div>
-        </div>
-        <h3>Auth Microservice</h3>
-        <p>Standalone authentication service with JWT, Two-Factor Authentication, RBAC, rate limiting, and full audit logging.</p>
-        <div class="skill-tags">
-          <span class="tag">Laravel</span><span class="tag">JWT</span>
-          <span class="tag">2FA</span><span class="tag">RBAC</span>
-        </div>
-      </div>
-      <div class="project-card fade-in">
-        <div class="project-header">
-          <div class="project-icon">📦</div>
-          <div class="project-links">
-            <a href="https://github.com/ahmedzarrar42/laravel-microservices-starter" class="project-link" target="_blank">↗ GitHub</a>
-          </div>
-        </div>
-        <h3>Laravel Microservices Starter</h3>
-        <p>Reusable boilerplate for building Laravel-based microservices with inter-service communication via REST and queues.</p>
-        <div class="skill-tags">
-          <span class="tag">Laravel</span><span class="tag">RabbitMQ</span>
-          <span class="tag">Docker Compose</span>
-        </div>
-      </div>
-      <div class="project-card fade-in">
-        <div class="project-header">
           <div class="project-icon">🚀</div>
-          <div class="project-links">
-            <a href="https://github.com/ahmedzarrar42/gcp-data-pipeline" class="project-link" target="_blank">↗ GitHub</a>
-          </div>
+          <a href="https://github.com/ahmedzarrar42/gcp-data-pipeline" class="project-link" target="_blank">↗ GitHub</a>
         </div>
         <h3>GCP Data Pipeline</h3>
-        <p>Python platform for web scraping, ETL pipelines, and automation deployed on Google Cloud Run with BigQuery and Pub/Sub.</p>
+        <p>Python platform for web scraping, ETL pipelines, and automation deployed on Google Cloud Run with BigQuery, Pub/Sub, and CI/CD via GitHub Actions.</p>
         <div class="skill-tags">
           <span class="tag">Python</span><span class="tag">GCP</span>
           <span class="tag">BigQuery</span><span class="tag">Cloud Run</span>
@@ -546,27 +492,67 @@
 <section id="experience">
   <div class="section-inner">
     <div class="section-label">Background</div>
-    <h2 class="section-title">Experience</h2>
-    <p class="section-desc">Over a decade of building backend systems across e-commerce, SaaS, and security domains.</p>
+    <h2 class="section-title">Work Experience</h2>
+    <p class="section-desc">13+ years delivering backend systems across security, e-commerce, SaaS, and enterprise domains.</p>
     <div class="timeline">
+
       <div class="timeline-item fade-in">
-        <div class="timeline-date">2020 — Present</div>
-        <h3>Senior Backend Engineer</h3>
-        <div class="timeline-company">Freelance — Germany & Europe</div>
-        <p>Designing and building scalable REST APIs, microservices, and backend systems for clients across Europe. Leading technical decisions, code reviews, and mentoring junior developers.</p>
+        <div class="timeline-date">07/2024 — 04/2026</div>
+        <h3>Team Lead & Senior Backend Engineer</h3>
+        <div class="timeline-company">Get-Licensed — UK Security Licensing Platform | London, UK (Remote)</div>
+        <ul>
+          <li>Led 6+ engineer cross-functional team (PHP/Laravel, React.js, UI/UX) via Agile/Scrum on a high-traffic UK security licensing platform.</li>
+          <li>Architected AWS infrastructure (EC2, RDS read/write replicas, S3) achieving 99.9% uptime; managed Linux server environments.</li>
+          <li>Designed and maintained OOP PHP codebases (SOLID, MVC) and scalable RESTful APIs for web and Flutter mobile clients.</li>
+          <li>Built CI/CD pipelines (Docker + Jenkins) reducing deployment time by ~60%.</li>
+          <li>Integrated third-party services: FullStory analytics, OneSignal, Firebase push notifications, AI-based tooling.</li>
+        </ul>
       </div>
+
       <div class="timeline-item fade-in">
-        <div class="timeline-date">2016 — 2020</div>
-        <h3>Backend Developer</h3>
-        <div class="timeline-company">E-Commerce & SaaS Projects</div>
-        <p>Built and maintained complex Laravel and Symfony applications. Delivered RESTful APIs, payment integrations, and scalable backend architectures for high-traffic platforms.</p>
+        <div class="timeline-date">04/2022 — 06/2024</div>
+        <h3>Senior Software Engineer — Laravel & PHP</h3>
+        <div class="timeline-company">Get-Licensed — UK Security Licensing Platform | London, UK (Remote)</div>
+        <ul>
+          <li>Developed and maintained large-scale Laravel applications supporting thousands of daily active users.</li>
+          <li>Optimised backend APIs, improving average response time by ~35% through query tuning and Redis caching.</li>
+          <li>Designed MySQL database models; integrated scalable backend services for web and Flutter mobile apps.</li>
+          <li>Maintained code quality (MVC/MVP, SOLID) through regular code reviews; primary technical contact for US clients.</li>
+        </ul>
       </div>
+
       <div class="timeline-item fade-in">
-        <div class="timeline-date">2013 — 2016</div>
-        <h3>PHP Developer</h3>
-        <div class="timeline-company">Agency & Client Projects</div>
-        <p>Started professional career building PHP web applications. Developed custom CMS solutions, third-party API integrations, and database-driven web platforms.</p>
+        <div class="timeline-date">09/2019 — 03/2022</div>
+        <h3>Software Engineer & Team Lead — PHP / Laravel / WordPress</h3>
+        <div class="timeline-company">Right Solution — E-Commerce & SaaS Platforms | Karachi, Pakistan</div>
+        <ul>
+          <li>Led backend development for e-commerce and SaaS platforms serving 100,000+ users using Laravel, Symfony, WordPress.</li>
+          <li>Built and maintained custom WordPress plugins and backend CMS extensions; designed scalable MySQL schemas.</li>
+          <li>Mentored junior developers; drove sprint planning and Agile development aligned with business goals.</li>
+        </ul>
       </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-date">10/2018 — 09/2019</div>
+        <h3>Senior Software Engineer — PHP / Magento / Shopify</h3>
+        <div class="timeline-company">Folio3 — Enterprise Software Solutions | Karachi, Pakistan</div>
+        <ul>
+          <li>Built Magento 2 → Shopify / BigCommerce custom data-sync extensions, reducing manual migration effort by ~70%.</li>
+          <li>Implemented Amazon S3 cloud storage solutions; resolved complex software defects across multiple platform layers.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-date">03/2011 — 09/2018</div>
+        <h3>Backend Developer / Software Engineer</h3>
+        <div class="timeline-company">Multiple Employers — Hidaya Trust, NetSol Technologies & others | Karachi, Pakistan</div>
+        <ul>
+          <li>Architected scalable REST APIs and backend systems using PHP (Symfony 2/3, CodeIgniter) for high-traffic services.</li>
+          <li>Developed and maintained WordPress & OpenCart e-commerce solutions with third-party API integrations.</li>
+          <li>Designed MySQL/NoSQL schemas; managed Linux servers; mentored junior engineers via structured code reviews.</li>
+        </ul>
+      </div>
+
     </div>
   </div>
 </section>
@@ -578,11 +564,15 @@
       <div>
         <div class="section-label">Contact</div>
         <h2 class="section-title">Let's Work Together</h2>
-        <p class="section-desc">Available for freelance projects, mentoring sessions, and long-term collaborations.</p>
+        <p class="section-desc">Available for freelance projects, mentoring sessions, and long-term collaborations. Based in Berlin (CET timezone).</p>
         <div class="contact-links">
           <a href="mailto:ahmedzarrar42@gmail.com" class="contact-link">
             <div class="contact-link-icon">✉️</div>
             ahmedzarrar42@gmail.com
+          </a>
+          <a href="tel:+4917915711516" class="contact-link">
+            <div class="contact-link-icon">📞</div>
+            +49 179 157 1516
           </a>
           <a href="https://linkedin.com/in/muhammad-ahmed-504b3a46/" target="_blank" class="contact-link">
             <div class="contact-link-icon">💼</div>
@@ -592,16 +582,13 @@
             <div class="contact-link-icon">🐙</div>
             github.com/ahmedzarrar42
           </a>
-          <a href="https://www.codementor.io/@ahmedzarrar42" target="_blank" class="contact-link">
-            <div class="contact-link-icon">🎓</div>
-            Codementor Profile
-          </a>
         </div>
       </div>
       <div class="contact-right fade-in">
         <h3>Looking for a reliable backend engineer?</h3>
-        <p>Whether you need help with a Laravel API, Symfony platform, GCP infrastructure, or just want to level up your backend skills — I'm here to help.</p>
-        <p>Based in Germany (CET timezone). Fluent in English and Urdu/Hindi.</p>
+        <p>Whether you need help with a Laravel API, Symfony platform, AWS infrastructure, or want to level up your backend skills through mentoring — I'm here to help.</p>
+        <p>🇩🇪 Based in Berlin, Germany — fully authorised to work (Chancenkarte). Fluent in English and Urdu/Hindi.</p>
+        <br/>
         <a href="mailto:ahmedzarrar42@gmail.com" class="btn-white">Send Me an Email →</a>
       </div>
     </div>
@@ -609,11 +596,10 @@
 </section>
 
 <footer>
-  <p>© 2026 Muhammad Ahmed · Senior Backend Engineer · Germany</p>
+  <p>© 2026 Muhammad Ahmed · Senior Backend Engineer · Berlin, Germany</p>
 </footer>
 
 <script>
-  // Scroll animations
   const observer = new IntersectionObserver(
     (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
     { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
