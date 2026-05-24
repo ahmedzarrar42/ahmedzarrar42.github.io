@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Muhammad Ahmed — Senior Backend Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #FAFAF7;
+      --white: #FFFFFF;
+      --ink: #1A1A18;
+      --ink-light: #4A4A46;
+      --ink-muted: #8A8A84;
+      --accent: #2563EB;
+      --accent-light: #EFF6FF;
+      --accent-mid: #BFDBFE;
+      --border: #E8E8E4;
+      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+      --shadow-hover: 0 4px 12px rgba(0,0,0,0.10), 0 8px 32px rgba(0,0,0,0.06);
+      --radius: 12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(250,250,247,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      padding: 0 2rem;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem; color: var(--ink);
+      text-decoration: none; letter-spacing: -0.02em;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--ink-light); text-decoration: none;
+      font-size: 0.9rem; font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta {
+      background: var(--accent); color: white !important;
+      padding: 0.5rem 1.25rem; border-radius: 8px;
+      transition: opacity 0.2s !important;
+    }
+    .nav-cta:hover { opacity: 0.88; color: white !important; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 7rem 2rem 4rem;
+      max-width: 1100px; margin: 0 auto;
+    }
+    .hero-content { max-width: 680px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--accent-light); color: var(--accent);
+      border: 1px solid var(--accent-mid);
+      padding: 0.35rem 0.9rem; border-radius: 100px;
+      font-size: 0.82rem; font-weight: 600;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.6s ease both;
+    }
+    .hero-badge span { width: 7px; height: 7px; background: var(--accent); border-radius: 50%; }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.8rem, 6vw, 4.2rem);
+      line-height: 1.1; letter-spacing: -0.03em;
+      color: var(--ink); margin-bottom: 1.25rem;
+      animation: fadeUp 0.6s ease 0.1s both;
+    }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero-sub {
+      font-size: 1.15rem; color: var(--ink-light);
+      max-width: 520px; line-height: 1.7;
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.6s ease 0.2s both;
+    }
+    .hero-actions {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      animation: fadeUp 0.6s ease 0.3s both;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1.75rem; border-radius: 10px;
+      font-size: 0.95rem; font-weight: 600;
+      text-decoration: none; transition: all 0.2s;
+      cursor: pointer; border: none;
+    }
+    .btn-primary { background: var(--accent); color: white; }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-outline {
+      background: white; color: var(--ink);
+      border: 1.5px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+    .hero-stats {
+      display: flex; gap: 2.5rem; margin-top: 4rem;
+      padding-top: 2.5rem; border-top: 1px solid var(--border);
+      animation: fadeUp 0.6s ease 0.4s both;
+    }
+    .stat-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.2rem; color: var(--ink); line-height: 1;
+    }
+    .stat-label { font-size: 0.85rem; color: var(--ink-muted); margin-top: 0.25rem; }
+
+    /* SECTIONS */
+    section { padding: 5rem 2rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      letter-spacing: -0.02em; line-height: 1.2;
+      margin-bottom: 1rem; color: var(--ink);
+    }
+    .section-desc {
+      font-size: 1.05rem; color: var(--ink-light);
+      max-width: 540px; line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    /* SKILLS */
+    #skills { background: white; }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+    .skill-card {
+      background: var(--cream); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem;
+      transition: all 0.25s;
+    }
+    .skill-card:hover {
+      border-color: var(--accent-mid);
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .skill-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: var(--accent-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; margin-bottom: 1rem;
+    }
+    .skill-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .skill-card p { font-size: 0.88rem; color: var(--ink-muted); line-height: 1.6; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.75rem; }
+    .tag {
+      background: white; border: 1px solid var(--border);
+      color: var(--ink-light); font-size: 0.75rem;
+      padding: 0.2rem 0.6rem; border-radius: 6px;
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: white; border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.75rem;
+      transition: all 0.25s; position: relative;
+      overflow: hidden;
+    }
+    .project-card::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: var(--accent); transform: scaleX(0);
+      transform-origin: left; transition: transform 0.3s;
+    }
+    .project-card:hover::before { transform: scaleX(1); }
+    .project-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+    }
+    .project-header {
+      display: flex; align-items: flex-start;
+      justify-content: space-between; margin-bottom: 0.75rem;
+    }
+    .project-icon { font-size: 1.5rem; }
+    .project-links { display: flex; gap: 0.5rem; }
+    .project-link {
+      color: var(--ink-muted); text-decoration: none;
+      font-size: 0.8rem; font-weight: 500;
+      display: flex; align-items: center; gap: 0.25rem;
+      transition: color 0.2s;
+    }
+    .project-link:hover { color: var(--accent); }
+    .project-card h3 {
+      font-size: 1.05rem; font-weight: 600;
+      margin-bottom: 0.5rem; color: var(--ink);
+    }
+    .project-card p {
+      font-size: 0.88rem; color: var(--ink-muted);
+      line-height: 1.6; margin-bottom: 1rem;
+    }
+
+    /* EXPERIENCE */
+    #experience { background: white; }
+    .timeline { position: relative; padding-left: 1.5rem; }
+    .timeline::before {
+      content: ''; position: absolute;
+      left: 0; top: 8px; bottom: 0;
+      width: 1px; background: var(--border);
+    }
+    .timeline-item {
+      position: relative; padding-bottom: 2.5rem;
+      padding-left: 1.5rem;
+    }
+    .timeline-item::before {
+      content: ''; position: absolute;
+      left: -1.5rem; top: 8px;
+      width: 9px; height: 9px;
+      border-radius: 50%; background: var(--accent);
+      border: 2px solid white;
+      box-shadow: 0 0 0 2px var(--accent-mid);
+    }
+    .timeline-date {
+      font-size: 0.8rem; font-weight: 600;
+      color: var(--accent); margin-bottom: 0.35rem;
+      letter-spacing: 0.04em;
+    }
+    .timeline-item h3 {
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--ink); margin-bottom: 0.2rem;
+    }
+    .timeline-company {
+      font-size: 0.9rem; color: var(--ink-muted);
+      margin-bottom: 0.75rem;
+    }
+    .timeline-item p {
+      font-size: 0.9rem; color: var(--ink-light);
+      line-height: 1.7;
+    }
+
+    /* CONTACT */
+    #contact { background: var(--ink); color: white; }
+    #contact .section-label { color: var(--accent-mid); }
+    #contact .section-title { color: white; }
+    #contact .section-desc { color: rgba(255,255,255,0.6); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem; align-items: start;
+    }
+    .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-link {
+      display: flex; align-items: center; gap: 1rem;
+      color: rgba(255,255,255,0.75); text-decoration: none;
+      font-size: 0.95rem; transition: color 0.2s;
+      padding: 0.75rem 1rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+    }
+    .contact-link:hover { color: white; background: rgba(255,255,255,0.09); }
+    .contact-link-icon {
+      width: 38px; height: 38px; border-radius: 8px;
+      background: rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+    .contact-right h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.6rem; margin-bottom: 1rem; color: white;
+    }
+    .contact-right p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem;
+    }
+    .btn-white {
+      background: white; color: var(--ink);
+      padding: 0.75rem 1.75rem; border-radius: 10px;
+      font-weight: 600; font-size: 0.95rem;
+      text-decoration: none; display: inline-flex;
+      align-items: center; gap: 0.5rem;
+      transition: all 0.2s;
+    }
+    .btn-white:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    /* FOOTER */
+    footer {
+      background: var(--ink); border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 1.5rem 2rem; text-align: center;
+      color: rgba(255,255,255,0.35); font-size: 0.82rem;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+      opacity: 0; transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero-stats { gap: 1.5rem; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Muhammad Ahmed</a>
+    <ul class="nav-links">
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span></span> Available for Freelance & Mentoring
+    </div>
+    <h1>Senior Backend<br><em>Engineer</em> based<br>in Germany</h1>
+    <p class="hero-sub">
+      I build scalable, secure backend systems with PHP, Laravel, and Symfony.
+      10+ years of experience delivering production-grade web applications
+      and APIs for clients across Europe.
+    </p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">View My Work ↓</a>
+      <a href="#contact" class="btn btn-outline">Get In Touch</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div>
+        <div class="stat-num">50+</div>
+        <div class="stat-label">Projects Delivered</div>
+      </div>
+      <div>
+        <div class="stat-num">5</div>
+        <div class="stat-label">Open Source Repos</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-label">Expertise</div>
+    <h2 class="section-title">What I Work With</h2>
+    <p class="section-desc">A decade of hands-on experience across the full backend stack — from API design to cloud infrastructure.</p>
+    <div class="skills-grid">
+      <div class="skill-card fade-in">
+        <div class="skill-icon">⚙️</div>
+        <h3>PHP & Frameworks</h3>
+        <p>Deep expertise in modern PHP development with Laravel and Symfony for production systems.</p>
+        <div class="skill-tags">
+          <span class="tag">PHP 8.3</span>
+          <span class="tag">Laravel 13</span>
+          <span class="tag">Symfony 7</span>
+          <span class="tag">REST APIs</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">🗄️</div>
+        <h3>Databases & Caching</h3>
+        <p>Designing optimised schemas, writing efficient queries, and implementing caching layers.</p>
+        <div class="skill-tags">
+          <span class="tag">MySQL</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Redis</span>
+          <span class="tag">Eloquent ORM</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">☁️</div>
+        <h3>Cloud & DevOps</h3>
+        <p>Containerised deployments, CI/CD pipelines, and cloud-native architecture on GCP.</p>
+        <div class="skill-tags">
+          <span class="tag">Docker</span>
+          <span class="tag">GCP</span>
+          <span class="tag">GitHub Actions</span>
+          <span class="tag">Cloud Run</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">📨</div>
+        <h3>Messaging & Queues</h3>
+        <p>Building async, event-driven systems with message queues for decoupled microservices.</p>
+        <div class="skill-tags">
+          <span class="tag">RabbitMQ</span>
+          <span class="tag">Pub/Sub</span>
+          <span class="tag">Laravel Queues</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">🧪</div>
+        <h3>Testing & Quality</h3>
+        <p>Test-driven development with comprehensive unit, integration, and functional test suites.</p>
+        <div class="skill-tags">
+          <span class="tag">PHPUnit</span>
+          <span class="tag">Pest</span>
+          <span class="tag">TDD</span>
+          <span class="tag">SOLID</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">🏗️</div>
+        <h3>Architecture</h3>
+        <p>Designing maintainable systems following clean architecture and domain-driven design principles.</p>
+        <div class="skill-tags">
+          <span class="tag">DDD</span>
+          <span class="tag">Microservices</span>
+          <span class="tag">Clean Code</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-label">Portfolio</div>
+    <h2 class="section-title">Featured Projects</h2>
+    <p class="section-desc">A selection of production-grade open source projects demonstrating my approach to backend engineering.</p>
+    <div class="projects-grid">
+      <div class="project-card fade-in">
+        <div class="project-header">
+          <div class="project-icon">⚙️</div>
+          <div class="project-links">
+            <a href="https://github.com/ahmedzarrar42/symfony-platform-api" class="project-link" target="_blank">↗ GitHub</a>
+          </div>
+        </div>
+        <h3>Symfony Platform API</h3>
+        <p>Production-grade REST API with JWT auth, order state machine, async processing via RabbitMQ, and Redis caching.</p>
+        <div class="skill-tags">
+          <span class="tag">Symfony 7</span><span class="tag">PHP 8.3</span>
+          <span class="tag">RabbitMQ</span><span class="tag">Docker</span>
+        </div>
+      </div>
+      <div class="project-card fade-in">
+        <div class="project-header">
+          <div class="project-icon">🛒</div>
+          <div class="project-links">
+            <a href="https://github.com/ahmedzarrar42/ecommerce-api" class="project-link" target="_blank">↗ GitHub</a>
+          </div>
+        </div>
+        <h3>E-Commerce REST API</h3>
+        <p>Full RESTful API for an e-commerce platform with product catalogue, cart management, and role-based access control.</p>
+        <div class="skill-tags">
+          <span class="tag">Laravel 13</span><span class="tag">MySQL</span>
+          <span class="tag">Redis</span><span class="tag">Sanctum</span>
+        </div>
+      </div>
+      <div class="project-card fade-in">
+        <div class="project-header">
+          <div class="project-icon">🔐</div>
+          <div class="project-links">
+            <a href="https://github.com/ahmedzarrar42/auth-microservice" class="project-link" target="_blank">↗ GitHub</a>
+          </div>
+        </div>
+        <h3>Auth Microservice</h3>
+        <p>Standalone authentication service with JWT, Two-Factor Authentication, RBAC, rate limiting, and full audit logging.</p>
+        <div class="skill-tags">
+          <span class="tag">Laravel</span><span class="tag">JWT</span>
+          <span class="tag">2FA</span><span class="tag">RBAC</span>
+        </div>
+      </div>
+      <div class="project-card fade-in">
+        <div class="project-header">
+          <div class="project-icon">📦</div>
+          <div class="project-links">
+            <a href="https://github.com/ahmedzarrar42/laravel-microservices-starter" class="project-link" target="_blank">↗ GitHub</a>
+          </div>
+        </div>
+        <h3>Laravel Microservices Starter</h3>
+        <p>Reusable boilerplate for building Laravel-based microservices with inter-service communication via REST and queues.</p>
+        <div class="skill-tags">
+          <span class="tag">Laravel</span><span class="tag">RabbitMQ</span>
+          <span class="tag">Docker Compose</span>
+        </div>
+      </div>
+      <div class="project-card fade-in">
+        <div class="project-header">
+          <div class="project-icon">🚀</div>
+          <div class="project-links">
+            <a href="https://github.com/ahmedzarrar42/gcp-data-pipeline" class="project-link" target="_blank">↗ GitHub</a>
+          </div>
+        </div>
+        <h3>GCP Data Pipeline</h3>
+        <p>Python platform for web scraping, ETL pipelines, and automation deployed on Google Cloud Run with BigQuery and Pub/Sub.</p>
+        <div class="skill-tags">
+          <span class="tag">Python</span><span class="tag">GCP</span>
+          <span class="tag">BigQuery</span><span class="tag">Cloud Run</span>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top: 2.5rem;">
+      <a href="https://github.com/ahmedzarrar42" target="_blank" class="btn btn-outline">View All on GitHub →</a>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-label">Background</div>
+    <h2 class="section-title">Experience</h2>
+    <p class="section-desc">Over a decade of building backend systems across e-commerce, SaaS, and security domains.</p>
+    <div class="timeline">
+      <div class="timeline-item fade-in">
+        <div class="timeline-date">2020 — Present</div>
+        <h3>Senior Backend Engineer</h3>
+        <div class="timeline-company">Freelance — Germany & Europe</div>
+        <p>Designing and building scalable REST APIs, microservices, and backend systems for clients across Europe. Leading technical decisions, code reviews, and mentoring junior developers.</p>
+      </div>
+      <div class="timeline-item fade-in">
+        <div class="timeline-date">2016 — 2020</div>
+        <h3>Backend Developer</h3>
+        <div class="timeline-company">E-Commerce & SaaS Projects</div>
+        <p>Built and maintained complex Laravel and Symfony applications. Delivered RESTful APIs, payment integrations, and scalable backend architectures for high-traffic platforms.</p>
+      </div>
+      <div class="timeline-item fade-in">
+        <div class="timeline-date">2013 — 2016</div>
+        <h3>PHP Developer</h3>
+        <div class="timeline-company">Agency & Client Projects</div>
+        <p>Started professional career building PHP web applications. Developed custom CMS solutions, third-party API integrations, and database-driven web platforms.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div>
+        <div class="section-label">Contact</div>
+        <h2 class="section-title">Let's Work Together</h2>
+        <p class="section-desc">Available for freelance projects, mentoring sessions, and long-term collaborations.</p>
+        <div class="contact-links">
+          <a href="mailto:ahmedzarrar42@gmail.com" class="contact-link">
+            <div class="contact-link-icon">✉️</div>
+            ahmedzarrar42@gmail.com
+          </a>
+          <a href="https://linkedin.com/in/muhammad-ahmed-504b3a46/" target="_blank" class="contact-link">
+            <div class="contact-link-icon">💼</div>
+            linkedin.com/in/muhammad-ahmed-504b3a46
+          </a>
+          <a href="https://github.com/ahmedzarrar42" target="_blank" class="contact-link">
+            <div class="contact-link-icon">🐙</div>
+            github.com/ahmedzarrar42
+          </a>
+          <a href="https://www.codementor.io/@ahmedzarrar42" target="_blank" class="contact-link">
+            <div class="contact-link-icon">🎓</div>
+            Codementor Profile
+          </a>
+        </div>
+      </div>
+      <div class="contact-right fade-in">
+        <h3>Looking for a reliable backend engineer?</h3>
+        <p>Whether you need help with a Laravel API, Symfony platform, GCP infrastructure, or just want to level up your backend skills — I'm here to help.</p>
+        <p>Based in Germany (CET timezone). Fluent in English and Urdu/Hindi.</p>
+        <a href="mailto:ahmedzarrar42@gmail.com" class="btn-white">Send Me an Email →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Muhammad Ahmed · Senior Backend Engineer · Germany</p>
+</footer>
+
+<script>
+  // Scroll animations
+  const observer = new IntersectionObserver(
+    (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+  );
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
